@@ -1,0 +1,684 @@
+/********************************************
+   AUTHOR:  			Erwin Aligam 
+   WEBSITE:   			http://www.styleshout.com/
+	TEMPLATE NAME: 	Bright Side of Life
+   TEMPLATE CODE: 	S-0005
+   VERSION:          1.0          	
+ *******************************************/
+
+/********************************************
+   HTML ELEMENTS
+********************************************/
+
+/* top elements */
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 150%;
+    font-size: 14px;
+    font-family: Calibri;
+    color: #666666;
+    background: #A9BAC3 url(images/bg.gif) repeat-x;
+    text-align: center;
+}
+
+/* links */
+a
+{
+    color: #4284B0;
+    text-decoration: none;
+    outline: none;
+}
+a:hover
+{
+    color: #9EC068;
+}
+
+/* headers */
+h1, h2, h3
+{
+    color: #333;
+}
+h1
+{
+    font-size: 20px;
+    color: #9EC630;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: #e0e0e0 1px dotted;
+    padding: 5px 0px 5px 3px;}
+h2
+{
+    font-size: 18px;
+    color: #9EC630;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: #e0e0e0 1px dotted;
+    padding: 5px 0px 5px 3px;
+}
+h3
+{
+    color: #8Eb620;
+    padding-left: 3px;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+    border-bottom: #e0e0e0 1px dotted;
+    font-size: 14px;
+}
+p, h2, h3
+{
+    margin: 10px 15px;
+}
+ul, ol
+{
+    margin: 10px 30px;
+    padding: 0 15px;
+    color: #4284B0;
+}
+ul span, ol span
+{
+    color: #666666;
+}
+
+/* images */
+img
+{
+    border: 2px solid #CCC;
+}
+img.no-border
+{
+    border: none;
+}
+img.float-right
+{
+    margin: 5px 0px 5px 15px;
+}
+img.float-left
+{
+    margin: 5px 15px 5px 0px;
+}
+a img
+{
+    border: 0px solid #568EB6;
+    border: 0px solid #ffffff !important; /* IE fix*/
+    border: 0px solid #ffffff;
+}
+a:hover img
+{
+    border: 0px solid #CCC !important; /* IE fix*/
+    border: 0px solid #568EB6;
+}
+
+code
+{
+    margin: 5px 0;
+    padding: 10px;
+    text-align: left;
+    display: block;
+    overflow: auto;
+    font: 500 1em/1.5em 'Lucida Console' , 'courier new' , monospace; /* white-space: pre; */
+    background: #FAFAFA;
+    border: 1px solid #f2f2f2;
+    border-left: 4px solid #4284B0;
+}
+acronym
+{
+    cursor: help;
+    border-bottom: 1px solid #777;
+}
+blockquote
+{
+    margin: 15px;
+    padding: 0 0 0 20px;
+    background: #FAFAFA;
+    border: 1px solid #f2f2f2;
+    border-left: 4px solid #4284B0;
+    color: #4284B0;
+    font: bold 1.2em/1.5em Georgia, 'Bookman Old Style' , Serif;
+}
+
+/* form elements */
+label
+{
+    display: block;
+    font-weight: bold;
+    margin: 5px 0;
+}
+input
+{
+    padding: 4px;
+    border: 1px solid #aaaaaa;
+    font-size: 13px;
+    color: #4284B0;
+}
+textarea
+{
+    width: 300px;
+    padding: 2px;
+    font: normal 1em Verdana, sans-serif;
+    border: 1px solid #eee;
+    height: 100px;
+    display: block;
+    color: #777;
+}
+.buttonASP
+{
+    border-right: 1px solid #555555;
+    border-top: 1px solid #555555;
+    border-left: 1px solid #555555;
+    border-bottom: 1px solid #555555;
+    border-collapse: collapse;
+    font-weight: normal;
+    font-size: 12px;
+    color: #222222;
+    font-family: 'Tahoma' , 'Arial' , 'sans-serif';
+    height: 24px;
+    cursor: pointer;
+    background-image: url(/images/button.jpg);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* search form */
+form.searchform
+{
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+form.searchform input.textbox
+{
+    margin: 0;
+    width: 120px;
+    border: 1px solid #9EC630;
+    background: #FFF;
+    color: #333;
+    height: 14px;
+    vertical-align: top;
+}
+form.searchform input.button
+{
+    margin: 0;
+    padding: 2px 3px;
+    font: bold 12px Arial, Sans-serif;
+    background: #FAFAFA;
+    border: 1px solid #f2f2f2;
+    color: #777;
+    width: 60px;
+    vertical-align: top;
+}
+
+/***********************
+	  LAYOUT
+************************/
+#wrap
+{
+    background: #FFF;
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+#content-wrap
+{
+    clear: both;
+    margin: 0;
+    padding: 0;
+    background: #FFF;
+}
+
+/* header */
+#header
+{
+    position: relative;
+    height: 100px;
+    background: #fff url(images/headerbg.gif) repeat-x 0% 100%;
+}
+#header #logo a
+{
+    color: #6297BC;
+    background-image: none;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    text-decoration: none;
+    border: 0px;
+}
+#header #logo
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 15px;
+    left: 10px;
+}
+div.search
+{
+    position: absolute;
+    width: 300px;
+    top: 10px;
+    left: 820px;
+    padding: 0;
+    text-align: right;
+    z-index: 1000;
+}
+div.search form input.text
+{
+    border: solid 1px #f00 !important;
+}
+/* main */
+#main
+{
+    float: left;
+    margin-left: 15px;
+    padding: 0;
+    width: 50%;
+}
+
+.post-footer
+{
+    background-color: #FAFAFA;
+    padding: 5px;
+    margin: 20px 15px 0 15px;
+    border: 1px solid #f2f2f2;
+    font-size: 95%;
+}
+.post-footer .date
+{
+    background: url(images/clock.gif) no-repeat left center;
+    padding-left: 20px;
+    margin: 0 10px 0 5px;
+}
+.post-footer .comments
+{
+    background: url(images/comment.gif) no-repeat left center;
+    padding-left: 20px;
+    margin: 0 10px 0 5px;
+}
+.post-footer .readmore
+{
+    background: url(images/page.gif) no-repeat left center;
+    padding-left: 20px;
+    margin: 0 10px 0 5px;
+}
+.pasif
+{
+    color: #a0a0a0;
+    font-size: 11px;
+    font-family: Tahoma,Verdana;
+}
+
+/* sidebar */
+#sidebar
+{
+    float: left;
+    width: 180px;
+    height: 100%;
+    margin: 0;
+    display: inline;
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    padding-right: 0px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    padding-top: 0px;
+}
+#sidebar ul.sidemenu
+{
+    list-style: none;
+    margin: 10px 0 10px 0px;
+    padding: 0;
+}
+#sidebar ul.sidemenu li
+{
+    margin-bottom: 1px;
+    border: 1px solid #f2f2f2;
+}
+#sidebar ul.sidemenu a
+{
+    display: block;
+    font: 12px 'Trebuchet MS' , Tahoma, verdana, sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 2px 5px 2px 5px;
+    background: #A8CC45;
+    border-left: 4px solid #90B4CF;
+    min-height: 18px;
+}
+
+#sidebar ul.sidemenu a.current
+{
+    display: block;
+    text-decoration: none;
+    padding: 3px 5px 1px 7px;
+    background: #90B4CF;
+    color: #ffffff;
+    border-left: 4px solid #739CbA;
+    min-height: 18px;
+}
+#sidebar ul.sidemenu a:hover
+{
+    padding: 3px 5px 1px 7px;
+    background: #90B4CF;
+    color: #ffffff;
+    border-left: 4px solid #739CbA;
+}
+* html body #sidebar ul.sidemenu a
+{
+    height: 18px;
+}
+#sidebar ul.sidemenulink
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+#sidebar ul.sidemenulink li
+{
+    margin-bottom: 1px;
+    margin-left: 5px;
+}
+#sidebar ul.sidemenulink a
+{
+    font: 12px 'Trebuchet MS' , Tahoma, verdana, sans-serif;
+    color: #707070;
+    text-decoration: none;
+}
+
+#sidebar ul.sidemenulink a.current
+{
+    color: #303030;
+}
+
+#sidebar ul.sidemenulink a:hover
+{
+    color: #202020;
+    border-bottom: 1px dotted #a0a0a0;
+}
+/* *** SHARE ***/
+.linkShare
+{
+    font-size: 10px;
+}
+a:hover, .link:hover, .linkShare:hover
+{
+    color: #c9562D;
+    background-color: inherit;
+}
+
+.anylinkcss
+{
+    position: absolute;
+    visibility: hidden;
+    line-height: 1.2em;
+    z-index: 100;
+    background-color: #fafafa;
+    width: 15em;
+    border: 1px #aaa solid;
+}
+.anylinkcss a
+{
+    display: block !important;
+    text-align: left;
+    text-decoration: none;
+    border: 0;
+    padding: 0.5em 0.2em 0.5em 2.3em;
+    background-color: #A8CC45;
+    color: #fff;
+}
+
+.anylinkcss a:hover
+{
+    color: #fff;
+    background-color: #83ACCA;
+}
+.linkxme
+{
+    background: url(images/linkxmee.png) no-repeat 0.5em center;
+}
+.googbkmk
+{
+    background: url(images/google_16.png) no-repeat 0.5em center;
+}
+.twitter
+{
+    background: url(images/twitter_16.png) no-repeat 0.5em center;
+}
+.email
+{
+    background: #eee url(images/email_16.png) no-repeat 0.5em center;
+}
+.myspace
+{
+    background: url(images/myspace_16.png) no-repeat 0.5em center;
+}
+.facebook
+{
+    background: url(images/facebook_16.png) no-repeat 0.5em center;
+}
+.windowslive
+{
+    background: url(images/windowslive_16.png) no-repeat 0.5em center;
+}
+.yahoo
+{
+    background: url(images/yahoo_16.png) no-repeat 0.5em center;
+}
+/* rightbar */
+div.rightbar
+{
+    float: right;
+    width: 185px;
+    margin: 0;
+    padding-right: 4px;
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    padding-left: 3px;
+    padding-bottom: 5px;
+    padding-top: 0px;
+}
+div.rightbar ul.sidemenulink, #main ul.sidemenulink
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: #4284B0;
+}
+div.rightbar ul.sidemenulink li, #main ul.sidemenulink li
+{
+    background-image: url(/images/point.gif);
+    background-position: 0px 3px;
+    background-repeat: no-repeat;
+    padding-left: 15px;
+    padding-bottom: 3px;
+}
+
+div.rightbar ul.sidemenulink a
+{
+    color: #4284B0;
+    text-decoration: none;
+}
+
+div.rightbar ul.sidemenulink a.current
+{
+    color: #9EC068;
+}
+
+div.rightbar ul.sidemenulink a:hover
+{
+    color: #9EC068;
+}
+/* Footer */
+#footer
+{
+    clear: both;
+    color: #FFF;
+    background: #A9BAC3;
+    border-top: 5px solid #568EB6;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    font-size: 95%;
+}
+#footer a
+{
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFF;
+}
+#footer .footer-left
+{
+    float: left;
+    width: 65%;
+}
+#footer .footer-right
+{
+    float: right;
+    width: 30%;
+}
+
+/* menu tabs */
+#header ul
+{
+    z-index: 999999;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    right: 0;
+    bottom: 6px !important;
+    bottom: 5px;
+    font: 14px 'Trebuchet MS' , Tahoma, verdana, sans-serif;
+}
+#header li
+{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+#header a
+{
+    float: left;
+    background: url(images/tableft.gif) no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 4px;
+    text-decoration: none;
+}
+#header a span
+{
+    float: left;
+    display: block;
+    background: url(images/tabright.gif) no-repeat right top;
+    padding: 6px 15px 3px 8px;
+    color: #FFF;
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#header a span
+{
+    float: none;
+}
+/* End IE5-Mac hack */
+#header a:hover span
+{
+    color: #FFF;
+    padding: 7px 13px 2px 10px;
+}
+#header a:hover
+{
+    background-position: 0% -42px;
+}
+#header a:hover span
+{
+    background-position: 100% -42px;
+}
+#header .current a
+{
+    background-position: 0% -42px;
+    color: #FFF;
+}
+#header .current a span
+{
+    background-position: 100% -42px;
+    color: #FFF;
+    padding: 7px 13px 2px 10px;
+}
+/* end menu tabs */
+
+/* alignment classes */
+.float-left
+{
+    float: left;
+}
+.float-right
+{
+    float: right;
+}
+.align-left
+{
+    text-align: left;
+}
+.align-right
+{
+    text-align: right;
+}
+
+/* additional classes */
+.clear
+{
+    clear: both;
+}
+.green
+{
+    color: #9EC630;
+}
+.gray
+{
+    color: #BFBFBF;
+}
+/* ************************* sayfa *****************/
+
+div.sayfalama
+{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+div.sayfalama span a
+{
+    border: 1px solid #a0a0a0;
+    padding: 3px;
+    text-decoration: none;
+    margin-right: 4px;
+}
+
+div.sayfalama span a:hover
+{
+    color: #ffffff;
+    background-color: #77bbff;
+    border: 1px solid #808080;
+}
+
+div.sayfalama span a.secili
+{
+    background-color: #aaccff;
+    font-weight: bold;
+}
+div.sayfalama span a.secili:hover
+{
+    background-color: #77bbff;
+    font-weight: bold;
+}

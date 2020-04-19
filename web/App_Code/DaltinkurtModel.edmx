@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DaltinkurtModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DaltinkurtModelStoreContainer">
+          <EntitySet Name="adminda" EntityType="DaltinkurtModel.Store.adminda" store:Type="Tables" Schema="daltinkurt" />
+          <EntitySet Name="dostsiteler" EntityType="DaltinkurtModel.Store.dostsiteler" store:Type="Tables" Schema="daltinkurt" />
+          <EntitySet Name="hakkimda" EntityType="DaltinkurtModel.Store.hakkimda" store:Type="Tables" Schema="daltinkurt" />
+          <EntitySet Name="iletisim" EntityType="DaltinkurtModel.Store.iletisim" store:Type="Tables" Schema="daltinkurt" />
+          <EntitySet Name="kategoriyazilar" EntityType="DaltinkurtModel.Store.kategoriyazilar" store:Type="Tables" Schema="daltinkurt" />
+          <EntitySet Name="menuler" EntityType="DaltinkurtModel.Store.menuler" store:Type="Tables" Schema="daltinkurt" />
+          <EntitySet Name="rightbar_menuler" EntityType="DaltinkurtModel.Store.rightbar_menuler" store:Type="Tables" Schema="daltinkurt" />
+          <EntitySet Name="sidemenulink" EntityType="DaltinkurtModel.Store.sidemenulink" store:Type="Tables" Schema="daltinkurt" />
+          <EntitySet Name="siteekle" EntityType="DaltinkurtModel.Store.siteekle" store:Type="Tables" Schema="daltinkurt" />
+          <EntitySet Name="tavsiyesiteler" EntityType="DaltinkurtModel.Store.tavsiyesiteler" store:Type="Tables" Schema="daltinkurt" />
+          <EntitySet Name="yazilarim" EntityType="DaltinkurtModel.Store.yazilarim" store:Type="Tables" Schema="daltinkurt" />
+        </EntityContainer>
+        <EntityType Name="adminda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sifre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Gecerlilik" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="dostsiteler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ad" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="url" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="oncelik" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="hakkimda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="baslik" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="detay" Type="mediumtext" Nullable="false" />
+          <Property Name="oncelik" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iletisim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Ad_Soyad" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="E-posta" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Telefon" Type="varchar" Nullable="false" MaxLength="11" />
+          <Property Name="Yorum" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="kategoriyazilar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Adi" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="gozukurluk" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="menuler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="menuAd" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="oncelik" Type="int" Nullable="false" />
+          <Property Name="gozukurluk" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="url" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="rightbar_menuler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="menuAd" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="oncelik" Type="int" Nullable="false" />
+          <Property Name="gozukurluk" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="url" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sidemenulink">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="linkAd" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="oncelik" Type="int" Nullable="false" />
+          <Property Name="url" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="siteekle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="adi" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="url" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="bolum" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tavsiyesiteler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="adi" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="url" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="oncelik" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="yazilarim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="KategoriId" Type="int" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Ozet" Type="varchar" MaxLength="150" />
+          <Property Name="Etiketler" Type="varchar" MaxLength="150" />
+          <Property Name="Icerik" Type="mediumtext" Nullable="false" />
+          <Property Name="kayitTarihi" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DaltinkurtModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="DaltinkurtEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="adminda" EntityType="DaltinkurtModel.adminda" />
+          <EntitySet Name="dostsiteler" EntityType="DaltinkurtModel.dostsiteler" />
+          <EntitySet Name="hakkimda" EntityType="DaltinkurtModel.hakkimda" />
+          <EntitySet Name="iletisim" EntityType="DaltinkurtModel.iletisim" />
+          <EntitySet Name="kategoriyazilar" EntityType="DaltinkurtModel.kategoriyazilar" />
+          <EntitySet Name="menuler" EntityType="DaltinkurtModel.menuler" />
+          <EntitySet Name="rightbar_menuler" EntityType="DaltinkurtModel.rightbar_menuler" />
+          <EntitySet Name="sidemenulink" EntityType="DaltinkurtModel.sidemenulink" />
+          <EntitySet Name="yazilarim" EntityType="DaltinkurtModel.yazilarim" />
+          <EntitySet Name="siteekle" EntityType="DaltinkurtModel.siteekle" />
+          <EntitySet Name="tavsiyesiteler" EntityType="DaltinkurtModel.tavsiyesiteler" />
+        </EntityContainer>
+        <EntityType Name="adminda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="KullaniciAdi" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Sifre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Gecerlilik" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="dostsiteler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ad" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="oncelik" Nullable="false" />
+        </EntityType>
+        <EntityType Name="hakkimda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="baslik" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="detay" Nullable="false" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="oncelik" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iletisim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Ad_Soyad" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="E_posta" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Telefon" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Yorum" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="kategoriyazilar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Adi" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="gozukurluk" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="menuler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="menuAd" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="oncelik" Nullable="false" />
+          <Property Type="String" Name="gozukurluk" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="rightbar_menuler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="menuAd" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="oncelik" Nullable="false" />
+          <Property Type="String" Name="gozukurluk" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sidemenulink">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="linkAd" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="oncelik" Nullable="false" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="yazilarim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="KategoriId" Nullable="false" />
+          <Property Type="String" Name="Baslik" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ozet" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Etiketler" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Icerik" Nullable="false" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="kayitTarihi" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="siteekle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="adi" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="bolum" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tavsiyesiteler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="adi" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="oncelik" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DaltinkurtModelStoreContainer" CdmEntityContainer="DaltinkurtEntities">
+          <EntitySetMapping Name="adminda">
+            <EntityTypeMapping TypeName="DaltinkurtModel.adminda">
+              <MappingFragment StoreEntitySet="adminda">
+                <ScalarProperty Name="Gecerlilik" ColumnName="Gecerlilik" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dostsiteler">
+            <EntityTypeMapping TypeName="DaltinkurtModel.dostsiteler">
+              <MappingFragment StoreEntitySet="dostsiteler">
+                <ScalarProperty Name="oncelik" ColumnName="oncelik" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hakkimda">
+            <EntityTypeMapping TypeName="DaltinkurtModel.hakkimda">
+              <MappingFragment StoreEntitySet="hakkimda">
+                <ScalarProperty Name="oncelik" ColumnName="oncelik" />
+                <ScalarProperty Name="detay" ColumnName="detay" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iletisim">
+            <EntityTypeMapping TypeName="DaltinkurtModel.iletisim">
+              <MappingFragment StoreEntitySet="iletisim">
+                <ScalarProperty Name="Yorum" ColumnName="Yorum" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="E_posta" ColumnName="E-posta" />
+                <ScalarProperty Name="Ad_Soyad" ColumnName="Ad_Soyad" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kategoriyazilar">
+            <EntityTypeMapping TypeName="DaltinkurtModel.kategoriyazilar">
+              <MappingFragment StoreEntitySet="kategoriyazilar">
+                <ScalarProperty Name="gozukurluk" ColumnName="gozukurluk" />
+                <ScalarProperty Name="Adi" ColumnName="Adi" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="menuler">
+            <EntityTypeMapping TypeName="DaltinkurtModel.menuler">
+              <MappingFragment StoreEntitySet="menuler">
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="gozukurluk" ColumnName="gozukurluk" />
+                <ScalarProperty Name="oncelik" ColumnName="oncelik" />
+                <ScalarProperty Name="menuAd" ColumnName="menuAd" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rightbar_menuler">
+            <EntityTypeMapping TypeName="DaltinkurtModel.rightbar_menuler">
+              <MappingFragment StoreEntitySet="rightbar_menuler">
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="gozukurluk" ColumnName="gozukurluk" />
+                <ScalarProperty Name="oncelik" ColumnName="oncelik" />
+                <ScalarProperty Name="menuAd" ColumnName="menuAd" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sidemenulink">
+            <EntityTypeMapping TypeName="DaltinkurtModel.sidemenulink">
+              <MappingFragment StoreEntitySet="sidemenulink">
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="oncelik" ColumnName="oncelik" />
+                <ScalarProperty Name="linkAd" ColumnName="linkAd" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="yazilarim">
+            <EntityTypeMapping TypeName="DaltinkurtModel.yazilarim">
+              <MappingFragment StoreEntitySet="yazilarim">
+                <ScalarProperty Name="kayitTarihi" ColumnName="kayitTarihi" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="Etiketler" ColumnName="Etiketler" />
+                <ScalarProperty Name="Ozet" ColumnName="Ozet" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="KategoriId" ColumnName="KategoriId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siteekle">
+            <EntityTypeMapping TypeName="DaltinkurtModel.siteekle">
+              <MappingFragment StoreEntitySet="siteekle">
+                <ScalarProperty Name="bolum" ColumnName="bolum" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tavsiyesiteler">
+            <EntityTypeMapping TypeName="DaltinkurtModel.tavsiyesiteler">
+              <MappingFragment StoreEntitySet="tavsiyesiteler">
+                <ScalarProperty Name="oncelik" ColumnName="oncelik" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DaltinkurtModel">
+        <EntityTypeShape EntityType="DaltinkurtModel.adminda" Width="1.5" PointX="0.75" PointY="0.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="DaltinkurtModel.dostsiteler" Width="1.5" PointX="2.75" PointY="0.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="DaltinkurtModel.hakkimda" Width="1.5" PointX="0.75" PointY="3.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="DaltinkurtModel.iletisim" Width="1.5" PointX="2.75" PointY="3.75" Height="1.9802864583333317" />
+        <EntityTypeShape EntityType="DaltinkurtModel.kategoriyazilar" Width="1.5" PointX="4.75" PointY="0.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="DaltinkurtModel.menuler" Width="1.5" PointX="4.75" PointY="3.75" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="DaltinkurtModel.rightbar_menuler" Width="1.5" PointX="6.75" PointY="0.75" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="DaltinkurtModel.sidemenulink" Width="1.5" PointX="0.75" PointY="6.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="DaltinkurtModel.yazilarim" Width="1.5" PointX="2.75" PointY="6.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="DaltinkurtModel.siteekle" Width="1.5" PointX="5.375" PointY="6.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="DaltinkurtModel.tavsiyesiteler" Width="1.5" PointX="7.375" PointY="3.75" Height="1.7879850260416674" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
